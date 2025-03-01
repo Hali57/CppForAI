@@ -2,7 +2,7 @@
 #include<string>
 #include <type_traits>
 
-
+using namespace std;
 /*
 
 You'll focus on decision-making and loops in C++. Implement the following:
@@ -23,6 +23,7 @@ Create a simple password prompt using a do-while loop that keeps asking until th
 
 	*/
 
+/*
 void num_check() {
 	int num{};
 	// if else statement to check if the number is odd or even and if the number is positive negative or 0
@@ -163,4 +164,41 @@ int main(){
   std::cout << "Welcome!";
 
 
+}
+*/
+/*
+📝 Day 4 Task
+1️- Create a function that multiplies two numbers and returns the result.
+2️- Overload a function that prints an integer, double, and string.
+3️ -Write a function that modifies a variable using pass by reference.
+
+*/
+int multiplier(int a, int b) {
+    return a * b;
+}
+
+void printer(int x) {
+    cout << "Integer: " << x << endl;
+}
+
+void printer(double x) {
+    cout << "Double: " << x << endl;
+}
+
+void printer(string x) {
+    cout << "String: " << x << endl;
+}
+
+int modify_vriable(int& x) {
+    return x=40;
+}
+
+int main() {
+    int num = 20;
+    multiplier(20, 40);
+    printer("John");
+    printer(200);
+    printer(2.345);
+    modify_vriable(num);
+    cout << num;
 }
