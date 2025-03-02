@@ -173,6 +173,8 @@ int main(){
 3️ -Write a function that modifies a variable using pass by reference.
 
 */
+
+/*
 int multiplier(int a, int b) {
     return a * b;
 }
@@ -201,4 +203,38 @@ int main() {
     printer(2.345);
     modify_vriable(num);
     cout << num;
+}
+*/
+
+/*
+               Day 5 Task
+1- Create a pointer that stores the memory address of an integer.
+2️- Modify a variable’s value through a pointer.
+3️- Use a pointer to traverse and print an array’s elements.
+4️- Allocate and free dynamic memory for an integer and an array.
+
+*/
+int main() {
+    int num{ 20 };
+    int* ptr = &num; // pointer stores the memory address of the int num
+
+    *ptr = 30; // modifying the value of num
+
+    int array[3] = { 10, 20, 30 };
+
+    int* ptr1 = array;
+    // iterating over an array using a pointer
+    cout << *ptr1 << endl;
+    cout << *(ptr1 + 1) << endl;
+    cout << *(ptr1 + 2)<< endl;
+
+    // allocating free memory to an int
+    int* number =new int;
+    *number = 50;
+    delete number; // free allocated memory
+
+    // allocating free memory for an an array
+    int size = 3;
+    int* arr = new int[ size ];
+    delete[] arr; // free allocated memory 
 }
