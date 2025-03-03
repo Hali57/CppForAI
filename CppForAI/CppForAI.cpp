@@ -214,6 +214,7 @@ int main() {
 4️- Allocate and free dynamic memory for an integer and an array.
 
 */
+/*
 int main() {
     int num{ 20 };
     int* ptr = &num; // pointer stores the memory address of the int num
@@ -237,4 +238,55 @@ int main() {
     int size = 3;
     int* arr = new int[ size ];
     delete[] arr; // free allocated memory 
+}
+*/
+
+/*
+                     Day 6 Task
+1️- Create a reference and modify a variable using it.
+2️- Pass a reference to a function to modify a variable.
+3️- Declare a function pointer and call a function using it.
+4️- Pass a function pointer as an argument to another function.
+*/
+
+
+// create a func
+
+void modify_value(int& number) {
+    number = 200;
+    
+}
+
+// creating a function pointer
+
+int addition(int a, int b){ return a + b; }
+
+int (*funcPointer)(int, int) = addition; // function pointer
+
+// passing the function pointer as an argument of another func
+void executeFunc(int (*func)(int, int), int a, int b) {
+    cout << "Result: " << func(a, b) << endl;
+}
+      
+int main() {
+    // creating a reference
+    int num{ 39 };
+    int &num_ref = num;
+
+    num_ref = 50; // modifying a value by changing the reference
+
+    cout << num << endl; // value changed
+
+    int value{ 500 };
+    modify_value(value); // changing the value
+
+    cout << value<<endl;
+    
+    // using the pointer function
+    cout << funcPointer(30, 40) << endl;
+
+    
+    
+    executeFunc(addition,40, 50);
+
 }
