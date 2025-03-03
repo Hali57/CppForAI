@@ -95,4 +95,11 @@ int main() {
 - 3️⃣ Use a pointer to traverse and print an array’s elements.✅
 - 4️⃣ Allocate and free dynamic memory for an integer and an array.✅
 
+
+## 📝 **Day 6 Task:**
+- 1️⃣ Create a reference and modify a variable using it.
+- 2️⃣ Pass a reference to a function to modify a variable.
+- 3️⃣ Declare a function pointer and call a function using it.
+- 4️⃣ Pass a function pointer as an argument to another function.
+
 📌 **Remember to push your code daily to** [CppForAI](https://github.com/Hali57/CppForAI)! 🚀
