@@ -1,7 +1,7 @@
 ﻿#include<iostream>
 #include<string>
 #include <type_traits>
-
+#include<memory>
 using namespace std;
 /*
 
@@ -251,6 +251,7 @@ int main() {
 
 
 // create a func
+/*
 
 void modify_value(int& number) {
     number = 200;
@@ -289,4 +290,46 @@ int main() {
     
     executeFunc(addition,40, 50);
 
+}
+*/
+
+
+/* 
+                  📝 Day 7 Task
+1️- Dynamically allocate memory for an integer and delete it.
+2️- Create a dynamic array, store values, print them, and free memory.
+3️- Use a unique_ptr to manage memory automatically.
+4️- Use a shared_ptr and check its use_count().
+
+*/
+int main() {
+    // dynamically allocating memory to an int
+    int* num = new int(30);
+    delete num; // deleting / releasing the memory
+
+    // creating a dynamic array
+    int size{ 4 };
+    int* arr = new int[size];
+
+    arr[0] = 30;
+    arr[1] = 40;
+    arr[2] = 45;
+    arr[3] = 50;
+
+    // iterating through the array
+    cout << *arr << endl;
+    cout << *(arr + 1) << endl;
+    cout << *(arr + 2) << endl;
+    cout << *(arr + 3) << endl;
+
+    // using unique_ptr
+    unique_ptr<int> num_ptr = make_unique<int>(30);
+    cout << "Unique pointer: " << *num_ptr << endl;
+
+    // using shared_ptr
+    shared_ptr<int> sptr1 = make_shared<int>(444);
+    shared_ptr<int>sptr2 = sptr1;
+
+    cout << "Shared Pointer: " << *sptr2 << endl;
+    cout << "Reference: " << sptr1.use_count() << endl;
 }
