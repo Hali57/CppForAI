@@ -302,6 +302,8 @@ int main() {
 4️- Use a shared_ptr and check its use_count().
 
 */
+/*
+
 int main() {
     // dynamically allocating memory to an int
     int* num = new int(30);
@@ -332,4 +334,70 @@ int main() {
 
     cout << "Shared Pointer: " << *sptr2 << endl;
     cout << "Reference: " << sptr1.use_count() << endl;
+}
+*/
+
+/*
+                 📝 Day 8 Task
+1️ - Create a Person class with attributes name and age, and a method to display them.
+2️ - Implement a constructor that initializes the attributes.
+3️ - Use encapsulation by making age private & provide getter/setter methods.
+4️ - Create a Student class that inherits from Person, adding grade.
+5️ - Override the display method to also show grade.
+*/
+
+class Person {
+private:
+    int age;
+public:
+    string name;
+    
+
+    // creating constructor
+    Person(string a, int b) {
+        name = a;
+        age = b;
+    }
+    // getter function
+    int get_age() {
+        return age;
+    }
+    // setter function
+    void set_age(int current_age) {
+        age = current_age;
+    }
+    virtual void greeting() {
+        cout << "Hello " << name << " You're " << age <<" years old" << endl;
+
+    }
+
+};
+class Student : public Person{
+public:
+    string grade;
+
+   
+    Student(string a,int b, string current_grade) :Person(a, b), grade(current_grade){
+        grade = current_grade;
+    }
+    void greeting() override{
+        cout << "Hello " << name << " You're " << get_age() << " and you are in " << grade;
+    }
+
+};
+    
+
+
+int main() {
+    Person person = Person("Hal", 27);
+    person.greeting();
+
+    person.set_age(30);
+
+    person.greeting(); 
+
+    // using polymorphism
+    Person* student = new Student("Paul", 13, "Grade 7");
+    student->greeting();
+
 }
