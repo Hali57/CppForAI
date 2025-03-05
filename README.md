@@ -124,5 +124,12 @@ int main() {
 - 3️⃣ Use encapsulation by making age private & provide getter/setter methods. ✅
 - 4️⃣ Create a Student class that inherits from Person, adding grade. ✅
 - 5️⃣ Override the display method to also show grade. ✅
+
+### 🔹**Day 9:** Dynamic Memory Allocation & Destructors
+## 🎯**Day 9 Task:**
+- Write a program where:
+- 1️⃣ You create a BankAccount class with a constructor and destructor.
+- 2️⃣ It should print messages when an account is created and closed.
+- 3️⃣ Dynamically create and delete a BankAccount object in main().
   
 📌 **Remember to push your code daily to** [CppForAI](https://github.com/Hali57/CppForAI)! 🚀
