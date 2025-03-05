@@ -346,6 +346,8 @@ int main() {
 5️ - Override the display method to also show grade.
 */
 
+/*
+
 class Person {
 private:
     int age;
@@ -400,4 +402,55 @@ int main() {
     Person* student = new Student("Paul", 13, "Grade 7");
     student->greeting();
 
+}
+*/
+/*
+                     🎯 Hands-On Challenge
+Write a program where:
+1️ - You create a BankAccount class with a constructor and destructor.
+2️ - It should print messages when an account is created and closed.
+3️ - Dynamically create and delete a BankAccount object in main().
+
+*/
+class BankAccount {
+public:
+    string dateCreated{ "11/12/2025" };
+    BankAccount() {
+        cout << "Bank Account created on " << dateCreated<<endl;
+    }
+    virtual ~BankAccount() {
+        cout << "Bank Account Closed" << endl;
+    }
+};
+
+class JointAccount : public BankAccount {
+private:
+    double balance{};
+public:
+    JointAccount(int deposit) {
+        balance += deposit;
+        cout << "JointAccount Created and the money is successfully deposited" << endl;
+    }
+    ~JointAccount() {
+        cout << "JointAccount Successfully Closed!" << endl;
+    }
+    double getBalance() {
+        return balance;
+    }
+    void setBalance(double amount) {
+        balance += amount;
+    }
+};
+
+int main() {
+    BankAccount* personalAccount = new JointAccount(20000.00);
+    personalAccount;
+    // Accessing a method unique to Child (requires casting)
+    JointAccount* jointPtr = dynamic_cast<JointAccount*>(personalAccount);
+    if (jointPtr) {
+        jointPtr->setBalance(50000.00);
+        cout << "Balance: " << jointPtr->getBalance() << endl;
+    }
+    
+    delete personalAccount;
 }
