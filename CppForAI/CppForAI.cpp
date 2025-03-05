@@ -412,6 +412,8 @@ Write a program where:
 3️ - Dynamically create and delete a BankAccount object in main().
 
 */
+
+/*
 class BankAccount {
 public:
     string dateCreated{ "11/12/2025" };
@@ -453,4 +455,86 @@ int main() {
     }
     
     delete personalAccount;
+}
+*/
+
+/*
+
+     🎯 Day 9 Tasks
+✅ Overload + and - for a class.
+✅ Overload == for comparison.
+✅ Overload << for cout output.
+✅ Explore other operators like *, /, or !=.
+
+*/
+
+class Point {
+public:
+    int a, b;
+    Point(int x, int y): a(x), b(y){}
+
+    Point operator+(const Point& other) {
+        return Point(a + other.a, b + other.b); // overloading the + operator
+    }
+
+    
+};
+
+class Point1 {
+public:
+    int c, d;
+    Point1(int w, int z) : c(w), d(z){}
+
+    Point1 operator-(const Point1& other) {
+        return Point1(c - other.c, d - other.d);
+    }
+};
+
+class Point3 {
+public:
+    int v1, v2;
+    Point3(int w1, int w2) : v1(w1) , v2(w2){}
+
+    friend ostream& operator<<(ostream& os, const Point3& other) {
+        os << "( " << other.v1 << " , " << other.v2 << " )" << endl;
+        return os;
+    }
+};
+
+class Point4 {
+public:
+    int value1, value2;
+    Point4(int val1, int val2) : value1(val1), value2(val2) {}
+
+    Point4 operator/(const Point4& other) {
+        return Point4(value1 / other.value1, value2 / other.value2); // overloading the / operator
+
+    }
+       
+    
+
+
+};
+
+int main() {
+    Point p1(2, 3), p2(1, 2);
+    Point1 p4(4, 6), p5(3, 5);
+    Point3 p7(11, 34);
+    Point4 p8(10, 20),  p9(2, 10);
+
+    Point p3 = p1 + p2;
+    Point1 p6 = p4 - p5;
+    Point4 p10 = p8 / p9;
+
+    cout << "Overloading the + operator...." << endl;
+    cout <<"( " << p3.a << " , " << p3.b << " )" << endl;
+    
+    cout << "Overloading the - operator...." << endl;
+    cout << "( " << p6.c << " , " << p6.d <<" )" << endl;
+
+    cout << "Overloading the << operator..." << endl;
+    cout << p7 << endl;
+
+    cout << "Overloading the / operator...." << endl;
+    cout << "( " << p10.value1 << " , " << p10.value2 << " )" << endl;
 }
