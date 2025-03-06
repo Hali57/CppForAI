@@ -131,5 +131,21 @@ int main() {
 - 1️⃣ You create a BankAccount class with a constructor and destructor. ✅
 - 2️⃣ It should print messages when an account is created and closed. ✅
 - 3️⃣ Dynamically create and delete a BankAccount object in main(). ✅
-  
+
+### 🔹**Day 10:** Operator Overloading.
+## 🎯 **Day 10 Task:** ✅
+- ✅ Overload + and - for a class.
+- ✅ Overload == for comparison.
+- ✅ Overload << for cout output.
+- ✅ Explore other operators like *, /, or !=.
+
+### 🔹**Day 11:** Function Templates & Operator Overloading
+## 📝 **Day 11:**
+- 1️⃣ Create a function template that finds the maximum of two values.
+- 2️⃣ Implement operator overloading for:
+    - ++ (prefix and postfix increment)
+    - -- (prefix and postfix decrement)
+      
+- 3️⃣ Experiment with overloading multiple operators in a custom class.
+
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
