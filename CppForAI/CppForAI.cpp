@@ -551,7 +551,7 @@ int main() {
 
 */
 
-
+/*
 // creating a template function
 template<typename T>
 void findMax(T& a, T& b) {
@@ -658,4 +658,86 @@ int main() {
     CustomOverloader value3 = (value / value2);
 
     value3.show();
+}
+
+*/
+
+/*
+                    DAY 12  🎯 Your Tasks
+✅ Task 1:
+
+Modify the findMax() function to work with three values instead of two.
+✅ Task 2:
+
+Create a generic Stack class using a template that supports push(), pop(), and peek().
+
+*/
+template <typename T>
+void findMax(T a, T b, T c) {
+    if (a > b && a > c)
+        cout << " Max Value: " << a << endl;
+    else if (b > a && b > c) 
+        cout << " Max Value: " << b << endl;
+    else if (c > a && c > b) 
+        cout << " Max Value: " << c << endl;
+    else 
+        cout << " The values are equal "  << endl;
+    
+    
+    
+}
+template <typename T>
+class Stack { // stack is a form of LIFO (Last In , First Out)
+private:
+    static const int MAX{ 100 };
+    T arr[MAX]; // an array of size 100
+    int top; // top of the stack
+public:
+    Stack(): top(-1){} // Constructor initializes top to - 1
+
+     void push(T value) {
+        if (top >= MAX - 1) {
+            cout << "Stack overflow!!" << endl;
+            return;
+        }
+        arr[++top] = value;
+        cout << "Value pushed to stack!" << endl;
+    }
+
+    T pop() {
+        if (top < 0) {
+            cout << "Stack Underflow!" << endl;
+            return T(); // Return default value of T
+        }
+        return arr[top--]; // Return and remove the top element
+    }
+
+    T peek() {
+        if (top < 0) {
+            cout << "Stack is empty!" << endl;
+            return T();
+        }
+        return arr[top]; // Return the top element without removing it
+    }
+    bool isEmpty() {
+        return (top < 0);
+    }
+        
+    
+
+};
+int main() {
+    int a{ 20 }, b{ 30 }, c(10);
+    double x{ 3.5 }, y{ 44.9 }, z{ 5.0 };
+    findMax(x, y,z);
+
+    Stack<int> myStack;
+
+    myStack.isEmpty();
+    myStack.push(50);
+    myStack.push(100);
+    cout << "Top element: " << myStack.peek() << endl;
+
+    cout << myStack.pop() << " popped from stack." << endl;
+    cout << "Top element: " << myStack.peek() << endl;
 }
