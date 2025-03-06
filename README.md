@@ -138,4 +138,14 @@ int main() {
 - ✅ Overload == for comparison.
 - ✅ Overload << for cout output.
 - ✅ Explore other operators like *, /, or !=.
+
+### 🔹**Day 11:** Function Templates & Operator Overloading
+## 📝 **Day 11:**
+- 1️⃣ Create a function template that finds the maximum of two values.
+- 2️⃣ Implement operator overloading for:
+    - ++ (prefix and postfix increment)
+    - -- (prefix and postfix decrement)
+      
+- 3️⃣ Experiment with overloading multiple operators in a custom class.
+
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
