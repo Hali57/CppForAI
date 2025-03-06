@@ -467,7 +467,7 @@ int main() {
 ✅ Explore other operators like *, /, or !=.
 
 */
-
+/*
 class Point {
 public:
     int a, b;
@@ -537,4 +537,125 @@ int main() {
 
     cout << "Overloading the / operator...." << endl;
     cout << "( " << p10.value1 << " , " << p10.value2 << " )" << endl;
+}
+*/
+
+/*
+                   📝 Tasks for Day 11
+1️ - Create a function template that finds the maximum of two values.
+2️ - Implement operator overloading for:
+
+         ++ (prefix and postfix increment)
+         -- (prefix and postfix decrement)
+3️ - Experiment with overloading multiple operators in a custom class.
+
+*/
+
+
+// creating a template function
+template<typename T>
+void findMax(T& a, T& b) {
+    if (a > b)
+        cout << a << " is bigger than " << b << endl;
+    else if (b > a)
+        cout << b << " is bigger than " << a << endl;
+    else
+        cout << a << ' & ' << b << " are equal" << endl;
+}
+
+class Temperature {
+public:
+    int number;
+
+    Temperature(int num) : number(num){}
+
+    // postfix ++
+    Temperature& operator++(int){
+        Temperature temp = *this; // saving the current state
+        number++;
+        return temp; // returning initial value
+    }
+    // prefix ++
+    Temperature& operator++() {
+        ++number;
+        return *this; // returning updated value
+    }
+    // postfix --
+    Temperature& operator--(int) {
+        Temperature val = *this;// saving current state
+        number--;
+        return val;
+    }
+
+   
+    // prefix --
+    Temperature& operator--() {
+        --number;
+        return *this; // returning updated value
+    }
+    void show() {
+        cout << "Counter: " << number << endl;
+    }
+};
+class CustomOverloader {
+public:
+    int x;
+
+    CustomOverloader(int a) : x(a) {}
+    CustomOverloader operator+(const CustomOverloader& other) {
+        return CustomOverloader(x + other.x);
+    }
+
+    CustomOverloader operator-(const CustomOverloader& other) {
+        return CustomOverloader(x - other.x);
+    }
+
+    CustomOverloader operator/(const CustomOverloader& other) {
+        return CustomOverloader(x / other.x);
+    }
+
+    CustomOverloader operator%(const CustomOverloader& other) {
+        return CustomOverloader(x % other.x);
+    }
+
+    bool operator==(const CustomOverloader& other) {
+        return (x == other.x);
+    }
+    void show() {
+        cout << "Value : " << x << endl;
+    }
+};
+int main() {
+    double a{ 3.5 };
+    double b{ 7.5 };
+    int x{ 40 };
+    int y{ 30 };
+
+    findMax(x, y);
+
+    Temperature p(50);
+    cout << "Before prefix (++p): " << endl;
+    p.show();
+
+    ++p;
+    cout << "After prefix (++p): " << endl;
+    p.show();
+
+    Temperature p2 = p++;
+    cout << "After postfix (p++): " << endl;
+    p.show();
+    cout << "Returned value: " << endl;
+    p2.show();
+
+    cout << "Before prefix (--p): " << endl;
+    p.show();
+
+    --p;
+    cout << "After prefix (--p): " << endl;
+    p.show();
+    
+    CustomOverloader value(20), value2(10);
+    CustomOverloader value3 = (value / value2);
+
+    value3.show();
 }
