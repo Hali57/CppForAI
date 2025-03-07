@@ -140,12 +140,39 @@ int main() {
 - ✅ Explore other operators like *, /, or !=.
 
 ### 🔹**Day 11:** Function Templates & Operator Overloading
-## 📝 **Day 11:**
+## 📝 **Day 11 Task:**
 - 1️⃣ Create a function template that finds the maximum of two values.
 - 2️⃣ Implement operator overloading for:
     - ++ (prefix and postfix increment)
     - -- (prefix and postfix decrement)
       
 - 3️⃣ Experiment with overloading multiple operators in a custom class.
+
+### 🔹**Day 12:** Function & Class Templates
+``` 
+#include <iostream>
+using namespace std;
+
+// Function template for finding the maximum of two values
+template <typename T>
+T findMax(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    cout << "Max of 10 and 20: " << findMax(10, 20) << endl;
+    cout << "Max of 5.5 and 2.3: " << findMax(5.5, 2.3) << endl;
+    cout << "Max of 'A' and 'Z': " << findMax('A', 'Z') << endl;
+    return 0;
+}
+
+```
+## 🎯 **Day 12 Tasks:**
+- ✅ Task 1:
+  
+    - Modify the findMax() function to work with three values instead of two.
+- ✅ Task 2:
+
+    - Create a generic Stack class using a template that supports push(), pop(), and peek().
 
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
