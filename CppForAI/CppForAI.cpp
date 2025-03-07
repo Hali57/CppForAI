@@ -2,6 +2,8 @@
 #include<string>
 #include <type_traits>
 #include<memory>
+#include<vector>
+#include <algorithm> // for std::remove
 using namespace std;
 /*
 
@@ -672,6 +674,7 @@ Modify the findMax() function to work with three values instead of two.
 Create a generic Stack class using a template that supports push(), pop(), and peek().
 
 */
+/*
 template <typename T>
 void findMax(T a, T b, T c) {
     if (a > b && a > c)
@@ -740,4 +743,74 @@ int main() {
 
     cout << myStack.pop() << " popped from stack." << endl;
     cout << "Top element: " << myStack.peek() << endl;
+}
+
+*/
+
+/*
+🎯 Challenge: Build a To-Do List Using Vectors
+Task:
+✅ Allow users to add, view, and remove tasks dynamically.
+
+✅ Modify the program so that tasks can be marked as completed instead of being deleted. 💪
+
+*/
+class ToDo {
+
+private:
+    vector<string> list;
+
+public:
+    ToDo(string todo) {
+        list.push_back(todo);
+        cout << "Task added to your todo list successfully: " << endl;
+    }
+    // add to todo list
+    void AddToList( string task) {
+        list.push_back(task);
+        cout << "Task added to your todo list successfully: " << endl;
+
+    }
+    // remove from todo list
+    void removeTask(string delTask) {
+        for (string val : list) {
+            if (val == delTask) {
+                list.erase(remove(list.begin(), list.end(), delTask));
+                cout << "Task successfully removed from todo list" << endl;
+            }
+        }
+    }
+    // access todo list
+    void viewList() {
+        cout << "Here are your Available Tasks: " << endl;
+        for (string tsk : list) {
+            cout << tsk << endl;
+        }
+    }
+
+    void markComplete(string complete) {
+        for (string& td : list) {
+            if (td == complete) {
+              td+=" (Complete)";
+              
+            }
+        }
+    }
+};
+
+int main() {
+    ToDo myTodoList("Study C++");
+    myTodoList.AddToList("Study Machine Learning with TensorFlow");
+    cout << endl;
+    myTodoList.viewList();
+    myTodoList.AddToList("Study Photography");
+    myTodoList.AddToList("Sleep");
+    cout << endl;
+    myTodoList.viewList();
+    myTodoList.removeTask("Sleep");
+    myTodoList.markComplete("Study C++");
+    cout << endl;
+    myTodoList.viewList();
+
+
 }
