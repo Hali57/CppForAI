@@ -4,6 +4,7 @@
 #include<memory>
 #include<vector>
 #include <algorithm> // for std::remove
+#include<queue>
 using namespace std;
 /*
 
@@ -755,6 +756,9 @@ Task:
 ✅ Modify the program so that tasks can be marked as completed instead of being deleted. 💪
 
 */
+
+/*
+
 class ToDo {
 
 private:
@@ -813,4 +817,78 @@ int main() {
     myTodoList.viewList();
 
 
+}
+*/
+
+/*
+          Task: Implement Your Own Queue Class
+Instructions:
+Implement a custom Queue class using an array or std::vector.
+Implement the following functions:
+enqueue(int x): Adds an element to the back.
+dequeue(): Removes an element from the front.
+front(): Returns the front element.
+isEmpty(): Checks if the queue is empty.
+*/
+
+class Queue {
+private:
+    queue<int> que;
+public:
+    Queue() {
+        cout << "Queue Data Structure Initalized! Add values now!" << endl;
+
+    }
+
+    void enqueue(int num) {
+        que.push(num);
+        cout << "Number added to queue" << endl;
+    }
+
+    void dequeue() {
+        que.pop(); // removing the front number
+        cout << "First element on the queue removed" << endl;
+    }
+
+    int  frontEl() {
+        return que.front(); // returns the first element
+    }
+
+    void show() {
+        cout << "Here are the values on the queue" << endl;
+        cout << endl;
+        queue<int> tempQue = que;
+        while (!tempQue.empty()) {
+            cout << tempQue.front()<< endl;
+            tempQue.pop(); // deleating value from a que
+         }
+    }
+
+    void isEmpty() {
+        if (que.empty()) {
+            cout << "Queue is empty" << endl;
+        }
+        else{ cout << "Queue is not empty" << endl; }
+       
+    }
+};
+
+int main() {
+    Queue myQueue = Queue();
+    myQueue.isEmpty();
+    myQueue.enqueue(40);
+    myQueue.enqueue(50);
+    myQueue.enqueue(70);
+    myQueue.enqueue(100);
+    myQueue.enqueue(120);
+
+    myQueue.dequeue();
+    cout << endl;
+    myQueue.frontEl();
+    myQueue.show();
+    myQueue.dequeue();
+    cout << endl;
+    myQueue.show();
+
+    
 }
