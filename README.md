@@ -175,4 +175,13 @@ int main() {
 
     - Create a generic Stack class using a template that supports push(), pop(), and peek().
 
+
+### 🔹**Day 13:** Mastering Vectors in C++
+## 🎯 **Day 13 Tasks:**
+🎯 Challenge: Build a To-Do List Using Vectors
+- Task:
+    - ✅ Allow users to add, view, and remove tasks dynamically.
+
+    - ✅ Modify the program so that tasks can be marked as completed instead of being deleted. 💪
+
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
