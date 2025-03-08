@@ -1,10 +1,12 @@
 ﻿#include<iostream>
 #include<string>
-#include <type_traits>
+#include <type_traits>// smart pointers
 #include<memory>
 #include<vector>
 #include <algorithm> // for std::remove
 #include<queue>
+#include<set>
+#include<map>
 using namespace std;
 /*
 
@@ -749,6 +751,7 @@ int main() {
 */
 
 /*
+                Day 13
 🎯 Challenge: Build a To-Do List Using Vectors
 Task:
 ✅ Allow users to add, view, and remove tasks dynamically.
@@ -821,6 +824,7 @@ int main() {
 */
 
 /*
+                    Day 14
           Task: Implement Your Own Queue Class
 Instructions:
 Implement a custom Queue class using an array or std::vector.
@@ -830,6 +834,8 @@ dequeue(): Removes an element from the front.
 front(): Returns the front element.
 isEmpty(): Checks if the queue is empty.
 */
+
+/*
 
 class Queue {
 private:
@@ -891,4 +897,54 @@ int main() {
     myQueue.show();
 
     
+}
+*/
+
+/*
+                🎯 Day 15 Tasks:
+    Your Task for Today
+        ✅ Create a set of words and allow the user to insert new words.
+        ✅ Create a map of students and their scores, allowing users to add new entries.
+*/
+int main() {
+    // create a set
+    set<int> num{ 40, 50, 90, 100, 120 };
+
+    // add values to a set
+    num.insert(10);
+    // finding a value
+    cout << "Checking for a value using .find()" << endl;
+
+    auto it =  num.find(50);
+
+    if (it != num.end()) {// if a value is not found .find() returns set.end()
+        cout << "Value Found!" << endl;
+    }
+    else {
+        cout << "Value does not exist" << endl;
+    }
+    num.erase(120);// remove a value
+
+    // iterate over a set
+    cout << "Values in the set: " << endl;
+
+    for (auto val : num) {
+        cout << val << " ";
+    }
+    
+
+    // Maps 
+    map<string, int> grades;
+    // adding values
+    grades["Paul"] = 80;
+    grades["Hali"] = 90;
+    grades["Khali"] = 95;
+    grades["Yas"] = 90;
+    
+    cout << endl;
+    // iterate over the map
+    cout << "Values in the map: " << endl;
+    for (auto pair : grades) {
+        cout << pair.first << " : " << pair.second << endl;
+    }
 }
