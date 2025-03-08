@@ -184,4 +184,16 @@ int main() {
 
     - ✅ Modify the program so that tasks can be marked as completed instead of being deleted. 💪
 
+
+### 🔹**Day 14:** Queue Data Structure
+## 🎯 **Day 14 Tasks:**
+- 🎯 Task: Implement Your Own Queue Class
+    - Instructions:
+        - Implement a custom Queue class using an array or std::vector.
+        - Implement the following functions:
+            - enqueue(int x): Adds an element to the back.
+            - dequeue(): Removes an element from the front.
+            - front(): Returns the front element.
+            - isEmpty(): Checks if the queue is empty.
+              
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
