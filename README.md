@@ -195,5 +195,17 @@ int main() {
             - dequeue(): Removes an element from the front.
             - front(): Returns the front element.
             - isEmpty(): Checks if the queue is empty.
-              
+
+### 🔹**Day 15:** Introduction to Set & Maps
+## **Day 15 Tasks:** 
+- ✅ Create a set of words and allow the user to insert new words.
+- ✅ Create a map of students and their scores, allowing users to add new entries.
+
+
+### 🔹**Day 16:** Priority Queues
+## **Day 16 Tasks:** 
+- Implement a priority queue that stores tasks with different priority levels.
+- Modify the program so higher priority numbers are executed first.
+
+  
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
