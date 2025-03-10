@@ -953,13 +953,14 @@ int main() {
 */
 
 /*
-                       ✅ Today's Challenge
+                      Day 16 ✅ Today's Challenge
 1️- Implement a priority queue that stores tasks with different priority levels.
 2️- Modify the program so higher priority numbers are executed first.
 
 
 */
 
+/*
 
 struct Task {
     // this is a custom class that impliments a min-Heap priority_queue i.e it returns the lowest value first
@@ -998,3 +999,51 @@ int main() {
     cout << " New element at the top: " << minHeap.top() << endl;
     return 0;
 }
+
+*/
+
+/* 
+        Day 17: Task for Today 🎯
+✔ Write a program using std::map to store student names and their grades.
+✔ Allow the user to input student names and grades dynamically.
+✔ Search for a specific student's grade by name.
+*/
+class Grades {
+private:
+    map<string, int> grade;
+public:
+    Grades(){
+        cout << "You can now  add student grades!!" << endl;
+    }
+
+    void addGrade(string name, int points) {
+        grade[name] = points;
+    }
+    void findGrade(string studentName) { // ensure that the student is in the map
+        if (grade.find(studentName) != grade.end()) {
+            cout << studentName << " gunnered " << grade[studentName] << " points." << endl;
+        }
+        else {
+            cout << studentName << " is not on the list" << endl;
+        }
+        
+    }
+    void showResults() {
+        for (auto& g : grade) {
+            cout << g.first << " -> " << g.second << endl;
+        }
+    }
+};
+int main() {
+    Grades grade = Grades();
+    grade.addGrade("Simon", 70);
+    grade.addGrade("Sasha", 60);
+    grade.addGrade("Ali", 80);
+    grade.addGrade("Tabby", 90);
+    grade.addGrade("Sisco", 85);
+
+
+    grade.findGrade("Mercy");
+    grade.showResults();
+}
+
