@@ -207,11 +207,25 @@ int main() {
 - Implement a priority queue that stores tasks with different priority levels.
 - Modify the program so higher priority numbers are executed first.
 
-### 🔹**Day 17:** Maps(std::map and std::unorderd_map)
+### 🔹**Day 17:** Maps(std::map )
 ## **Day 17 Tasks:** 🎯✅
 - Task for Today;✅
     - ✔ Write a program using std::map to store student names and their grades.
     - ✔ Allow the user to input student names and grades dynamically.
     - ✔ Search for a specific student's grade by name.
-    - 
+
+### 🔹**Day 18:** Maps(std::unorderd_map)
+- Key Differences Between std::map and std::unordered_map
+
+| Feature	| std::map	| std::unordered_map |
+|-----------|-----------|--------------------|
+| Ordering	| Sorted by key	| No specific order|
+|Lookup Time| `O(log n)`	| `O(1)` on average| 
+|Internal Structure|	Red-Black Tree|	Hash Table |
+|Use Case| When ordering is needed |	When performance is more important |
+
+## **Day 18 Tasks:** 🎯✅
+- 🔥 Challenge:
+    - Try implementing a program that counts the occurrences of words in a sentence using an unordered_map. 🚀
+  
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
