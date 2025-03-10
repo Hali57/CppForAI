@@ -906,6 +906,8 @@ int main() {
         ✅ Create a set of words and allow the user to insert new words.
         ✅ Create a map of students and their scores, allowing users to add new entries.
 */
+/*
+
 int main() {
     // create a set
     set<int> num{ 40, 50, 90, 100, 120 };
@@ -947,4 +949,52 @@ int main() {
     for (auto pair : grades) {
         cout << pair.first << " : " << pair.second << endl;
     }
+}
+*/
+
+/*
+                       ✅ Today's Challenge
+1️- Implement a priority queue that stores tasks with different priority levels.
+2️- Modify the program so higher priority numbers are executed first.
+
+
+*/
+
+
+struct Task {
+    // this is a custom class that impliments a min-Heap priority_queue i.e it returns the lowest value first
+    int id;
+    string description;
+
+    bool operator<(const Task& other)const {
+        return id > other.id;
+    }
+};
+
+int main() {
+    priority_queue<Task> task;
+
+    task.push({ 2 , "Learn C++" });
+    task.push({ 10 , "Learn python" });
+    task.push({ 20 , "Learn Photography" });
+    task.push({ 1 , "Explore your passions" });
+
+    cout<<task.top().description << endl;
+
+    cout << endl;
+    // implimenting a min heap priority queue
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+
+    minHeap.push(50);
+    minHeap.push(100);
+    minHeap.push(170);
+    minHeap.push(10);
+    minHeap.push(30);
+    minHeap.push(90);
+
+
+    cout << "Element at the top: "<< minHeap.top() << endl;
+    minHeap.pop();
+    cout << " New element at the top: " << minHeap.top() << endl;
+    return 0;
 }
