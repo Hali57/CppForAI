@@ -7,6 +7,8 @@
 #include<queue>
 #include<set>
 #include<map>
+#include<unordered_map>
+#include <sstream> // for streamlining strings
 using namespace std;
 /*
 
@@ -1008,6 +1010,8 @@ int main() {
 ✔ Allow the user to input student names and grades dynamically.
 ✔ Search for a specific student's grade by name.
 */
+
+/*
 class Grades {
 private:
     map<string, int> grade;
@@ -1046,4 +1050,44 @@ int main() {
     grade.findGrade("Mercy");
     grade.showResults();
 }
+*/
 
+/*
+                 Day 18 🔥 Challenge:
+1 - Try implementing a program that counts the occurrences of words in a sentence using an unordered_map. 🚀
+*/
+
+void  wordCount(string text) {
+    unordered_map<string, int> wordMap;
+    vector<string> vec;
+    string word;
+    stringstream ss(text);
+    int total = 0;
+
+    while (ss >> word) {
+        vec.push_back(word);
+    }
+    cout << "Separated words:" << endl;
+    for (const string& w : vec) {
+        if (wordMap.find(w) != wordMap.end()) {
+            wordMap[w] += 1;
+        }
+        else {
+            wordMap[w] = 1;
+        }
+    }
+    
+    for (auto& w : wordMap) {
+        total += w.second;
+        cout << w.first << " -> " << w.second << endl;
+       
+    }
+    cout << endl;
+    cout << "Total word count: " << total;
+}
+   
+
+int main() {
+    string text = "Hello friend , I know it has been a long day but I hope you are doing well and thriving. I hope to see you soon. Your friend Halifax. ";
+    wordCount(text);
+}
