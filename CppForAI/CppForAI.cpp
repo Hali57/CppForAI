@@ -1056,7 +1056,7 @@ int main() {
                  Day 18 🔥 Challenge:
 1 - Try implementing a program that counts the occurrences of words in a sentence using an unordered_map. 🚀
 */
-
+/*
 void  wordCount(string text) {
     unordered_map<string, int> wordMap;
     vector<string> vec;
@@ -1090,4 +1090,75 @@ void  wordCount(string text) {
 int main() {
     string text = "Hello friend , I know it has been a long day but I hope you are doing well and thriving. I hope to see you soon. Your friend Halifax. ";
     wordCount(text);
+}
+*/
+
+/*
+            Day 19: 🔥 Challenge Task
+Write a recursive function to calculate the nth Fibonacci number:
+Your function should return the nth Fibonacci number using recursion.
+*/
+
+// Recursive Fibonacci Function
+int fibonacci(int n) {
+    if (n == 0) return 0;  // Base Case 1
+    if (n == 1) return 1;  // Base Case 2
+    return fibonacci(n - 1) + fibonacci(n - 2); // Recursive Call
+
+   
+}
+//Write a recursive function to calculate the sum of digits of a given integer n.
+int sum(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    int last_digit= n % 10;
+    return sum(n / 10) + last_digit;
+}
+// Write a recursive function in C++ to reverse a string.
+string reverse(string  word) {
+    
+    if (word.length() == 0) {
+        cout << "Job Done" << endl;
+        return "";
+    }
+   
+    char last_char = word.back();
+    word.pop_back();
+    
+    return last_char + reverse(word);
+
+}
+//🧩 Challenge: Check if a String is a Palindrome
+bool checkPalindrome(string text) {
+    
+    char first_char = text.at(0);
+    char end_char = text.back();
+    int len = text.length();
+
+    if (len == 1 || len == 0) {
+        cout << " is a Palindrome" << endl;
+        return true;
+    }
+
+    if (((char)tolower(first_char)) != ((char)tolower(end_char))) {
+        cout << " is not a Palindrome" << endl;
+        return false;
+    }
+    else {
+        text.pop_back();
+        text.erase(text.begin());
+        
+        return checkPalindrome(text);
+    }
+
+    
+
+}
+int main() {
+    string text = "Hello";
+    cout << reverse(text);
+    checkPalindrome("racecar");
+    cout<<fibonacci(5);
+    
 }
