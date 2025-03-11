@@ -227,5 +227,26 @@ int main() {
 ## **Day 18 Tasks:** 🎯✅
 - 🔥 Challenge:
     - Try implementing a program that counts the occurrences of words in a sentence using an unordered_map. 🚀
+ 
+### 🔹**Day 19:** Recursion
+```
+
+// Recursive Fibonacci Function
+int fibonacci(int n) {
+    if (n == 0) return 0;  // Base Case 1
+    if (n == 1) return 1;  // Base Case 2
+    return fibonacci(n - 1) + fibonacci(n - 2); // Recursive Call
+
+   
+}
+int main(){
+    cout<<fibonacci(5); // 5
+}
+```
+## **Day 19 Tasks:** 🎯✅
+- 🧩 Write a recursive function in C++ to reverse a string.
+- 🧩 Write a recursive function to calculate the sum of digits of a given integer n. e.g. sum(1234) outputs 10;
+- 🧩 Challenge: Check if a String is a Palindrome.
+
   
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
