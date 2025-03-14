@@ -1099,6 +1099,8 @@ Write a recursive function to calculate the nth Fibonacci number:
 Your function should return the nth Fibonacci number using recursion.
 */
 
+/*
+
 // Recursive Fibonacci Function
 int fibonacci(int n) {
     if (n == 0) return 0;  // Base Case 1
@@ -1161,4 +1163,31 @@ int main() {
     checkPalindrome("racecar");
     cout<<fibonacci(5);
     
+}
+*/
+//                          DAY 20 🔥 Hash Maps
+
+// Challenge : Write a program that counts the frequency of words in a sentence using unordered_map.
+
+void wordCount(string word) {
+
+    unordered_map<string, int> frequency;
+    string text;
+    stringstream ss(word);
+    
+    while (ss >> text) { // using space as a delimeter
+       
+        frequency[text]++;
+        
+        
+    }
+
+    cout << "****** WORD COUNT ******" << endl;
+    for (const auto& txt : frequency) {
+        cout << txt.first << " : " << txt.second << endl;
+    }
+}
+int main() {
+    string str = "The road within is the least travelled but it is the most fulfiling . You will find all you think you have lost . Dare to look within";
+    wordCount(str);
 }
