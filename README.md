@@ -243,10 +243,16 @@ int main(){
     cout<<fibonacci(5); // 5
 }
 ```
+
 ## **Day 19 Tasks:** 🎯✅
 - 🧩 Write a recursive function in C++ to reverse a string.
 - 🧩 Write a recursive function to calculate the sum of digits of a given integer n. e.g. sum(1234) outputs 10;
 - 🧩 Challenge: Check if a String is a Palindrome.
 
+
+
+### 🔹**Day 20:** Hash Maps( unordered_map)
+## **Day 20 Task:** 🎯✅
+- 🧩🔥 Challenge: Write a program that counts the frequency of words in a sentence using unordered_map.
   
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
