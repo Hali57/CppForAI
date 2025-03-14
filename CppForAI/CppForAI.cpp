@@ -9,6 +9,8 @@
 #include<map>
 #include<unordered_map>
 #include <sstream> // for streamlining strings
+#include <bitset>
+
 using namespace std;
 /*
 
@@ -1165,6 +1167,7 @@ int main() {
     
 }
 */
+/*
 //                          DAY 20 🔥 Hash Maps
 
 // Challenge : Write a program that counts the frequency of words in a sentence using unordered_map.
@@ -1190,4 +1193,35 @@ void wordCount(string word) {
 int main() {
     string str = "The road within is the least travelled but it is the most fulfiling . You will find all you think you have lost . Dare to look within";
     wordCount(str);
+}
+
+*/
+/*
+    DAY 21 : BITWISE OPERATIONS IN C++;
+        ✅ Challenge Task
+            Write a function that counts the number of 1s in the binary representation of a given integer using bitwise operations.
+        🔥 Bonus Challenge: Count Bits Without Using bitset!
+*/
+int bitCount(int num) {
+    bitset<64> binary(num);
+    return  binary.count();
+}
+
+int countBits(int val) {
+    int count = 0;
+    while (val != 0) {
+        count += (val & 1); // If last bit is 1, increment count
+        val >>= 1;          // Shift right to process the next bit
+    }
+    return count;
+
+}   
+int main() {
+    
+    int num = 1000;
+    cout << "The number of ones in the binary are: " << bitCount(num) << endl;
+    
+    cout << countBits(num);
+   
+
 }
