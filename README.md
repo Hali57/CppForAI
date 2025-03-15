@@ -262,5 +262,12 @@ int main(){
 ## **Day 21 Task:** 🎯✅
          - Write a function that counts the number of 1s in the binary representation of a given integer using bitwise operations.
          -🔥 Bonus Challenge: Count Bits Without Using bitset!
+
+            
+### 🔹**DAY 22** : BIT MANIPULATION - Swapping two numbers without a temp variable IN C++
+## **Day 22 Task:** 🎯✅
+
+            - 🔥 Challenge:
+            - Write a function that finds the only non-repeating number in an array where every other number appears twice. (Hint: XOR can be useful!)
   
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
