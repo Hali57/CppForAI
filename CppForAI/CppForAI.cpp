@@ -1202,6 +1202,7 @@ int main() {
             Write a function that counts the number of 1s in the binary representation of a given integer using bitwise operations.
         🔥 Bonus Challenge: Count Bits Without Using bitset!
 */
+/*
 int bitCount(int num) {
     bitset<64> binary(num);
     return  binary.count();
@@ -1224,4 +1225,34 @@ int main() {
     cout << countBits(num);
    
 
+}
+*/
+/*                      DAY 22 BIT MANIPULATION
+            - 🔥 Challenge:
+            - Write a function that finds the only non-repeating number in an array where every other number appears twice. (Hint: XOR can be useful!)
+            
+            */
+void findUnique(const vector<int>& vec) {
+    unordered_map<int, int> frequency;
+
+    // Count occurrences of each number
+    for (int num : vec) {
+        frequency[num]++;
+    }
+
+    cout << "Unique numbers: ";
+    for (const auto& pair : frequency) {
+        if (pair.second == 1) {  // If frequency is 1, it's unique
+            cout << pair.first << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<int> numbers{ 20, 20, 30,40, 40, 30, 40, 50 };
+
+     findUnique(numbers);
+
+    //cout << numbers.size() << endl;
 }
