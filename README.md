@@ -245,14 +245,29 @@ int main(){
 ```
 
 ## **Day 19 Tasks:** 🎯✅
-- 🧩 Write a recursive function in C++ to reverse a string.
-- 🧩 Write a recursive function to calculate the sum of digits of a given integer n. e.g. sum(1234) outputs 10;
-- 🧩 Challenge: Check if a String is a Palindrome.
+        - 🧩 Write a recursive function in C++ to reverse a string.
+        - 🧩 Write a recursive function to calculate the sum of digits of a given integer n. e.g. sum(1234) outputs 10;
+        - 🧩 Challenge: Check if a String is a Palindrome.
+
 
 
 
 ### 🔹**Day 20:** Hash Maps( unordered_map)
 ## **Day 20 Task:** 🎯✅
-- 🧩🔥 Challenge: Write a program that counts the frequency of words in a sentence using unordered_map.
+        - 🧩🔥 Challenge: Write a program that counts the frequency of words in a sentence using unordered_map.
+
+
+            
+### 🔹**DAY 21** : BITWISE OPERATIONS IN C++
+## **Day 21 Task:** 🎯✅
+         - Write a function that counts the number of 1s in the binary representation of a given integer using bitwise operations.
+         -🔥 Bonus Challenge: Count Bits Without Using bitset!
+
+            
+### 🔹**DAY 22** : BIT MANIPULATION - Swapping two numbers without a temp variable IN C++
+## **Day 22 Task:** 🎯✅
+
+            - 🔥 Challenge:
+            - Write a function that finds the only non-repeating number in an array where every other number appears twice. (Hint: XOR can be useful!)
   
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
