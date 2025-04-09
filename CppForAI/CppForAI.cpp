@@ -1232,6 +1232,7 @@ int main() {
             - Write a function that finds the only non-repeating number in an array where every other number appears twice. (Hint: XOR can be useful!)
             
             */
+            /*
 void findUnique(const vector<int>& vec) {
     unordered_map<int, int> frequency;
 
@@ -1255,4 +1256,90 @@ int main() {
      findUnique(numbers);
 
     //cout << numbers.size() << endl;
+}
+*/
+
+/*
+       DAY 23:     RECURSSION - BACKTRACKING
+       TASK - Solve a sudoku using backtracking
+
+
+*/
+
+
+#define N 9
+
+// Check if it's safe to place num at board[row][col]
+bool isSafe(int board[N][N], int row, int col, int num) {
+    for (int x = 0; x < N; x++) {
+        // Check row and column
+        if (board[row][x] == num || board[x][col] == num)
+            return false;
+    }
+
+    // Check 3x3 subgrid
+    /*  Each 3x3 subgrid starts at:
+        Rows: 0, 3, 6
+        Columns: 0, 3, 6
+        */
+    int startRow = row - row % 3;
+    int startCol = col - col % 3;
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (board[i + startRow][j + startCol] == num)
+                return false;
+
+    return true;
+}
+
+// Recursive function to solve Sudoku
+bool solveSudoku(int board[N][N]) {
+    for (int row = 0; row < N; row++) {
+        for (int col = 0; col < N; col++) {
+            if (board[row][col] == 0) { // Empty cell
+                for (int num = 1; num <= 9; num++) {
+                    if (isSafe(board, row, col, num)) {
+                        board[row][col] = num;
+
+                        if (solveSudoku(board)) return true;
+
+                        // Backtrack
+                        board[row][col] = 0;
+                    }
+                }
+                return false;
+            }
+        }
+    }
+    return true; // No empty cells
+}
+
+// Print the Sudoku board
+void printBoard(int board[N][N]) {
+    for (int row = 0; row < N; row++) {
+        for (int col = 0; col < N; col++)
+            cout << board[row][col] << " ";
+        cout << endl;
+    }
+}
+
+int main() {
+    int board[N][N] = {
+        {5, 3, 0, 0, 7, 0, 0, 0, 0},
+        {6, 0, 0, 1, 9, 5, 0, 0, 0},
+        {0, 9, 8, 0, 0, 0, 0, 6, 0},
+        {8, 0, 0, 0, 6, 0, 0, 0, 3},
+        {4, 0, 0, 8, 0, 3, 0, 0, 1},
+        {7, 0, 0, 0, 2, 0, 0, 0, 6},
+        {0, 6, 0, 0, 0, 0, 2, 8, 0},
+        {0, 0, 0, 4, 1, 9, 0, 0, 5},
+        {0, 0, 0, 0, 8, 0, 0, 7, 9}
+    };
+
+    if (solveSudoku(board))
+        printBoard(board);
+    else
+        cout << "No solution exists";
+
+    return 0;
 }
