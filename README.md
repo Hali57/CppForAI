@@ -264,10 +264,75 @@ int main(){
          -🔥 Bonus Challenge: Count Bits Without Using bitset!
 
             
-### 🔹**DAY 22** : BIT MANIPULATION - Swapping two numbers without a temp variable IN C++
+### 🔹**DAY 22** : BIT MANIPULATION - Swapping two numbers without a temp variable
 ## **Day 22 Task:** 🎯✅
 
             - 🔥 Challenge:
             - Write a function that finds the only non-repeating number in an array where every other number appears twice. (Hint: XOR can be useful!)
-  
+
+
+### 🔹**DAY 23** : BACKTRACKING - RECURSION 
+```
+// solving the N-QUEENS Problem
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#define N 4  // Change this to any board size
+
+// Function to print the chessboard
+void printBoard(vector<vector<int>>& board) {
+    for (auto row : board) {
+        for (int cell : row)
+            cout << (cell ? " Q " : " . ");
+        cout << endl;
+    }
+    cout << endl;
+}
+
+// Function to check if placing a queen at (row, col) is safe
+bool isSafe(vector<vector<int>>& board, int row, int col) {
+    // Check same column
+    for (int i = 0; i < row; i++)
+        if (board[i][col]) return false;
+
+    // Check upper left diagonal
+    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (board[i][j]) return false;
+
+    // Check upper right diagonal
+    for (int i = row, j = col; i >= 0 && j < N; i--, j++)
+        if (board[i][j]) return false;
+
+    return true;
+}
+
+// Recursive function to place queens
+bool solveNQueens(vector<vector<int>>& board, int row) {
+    if (row == N) {  // If all queens are placed, print the solution
+        printBoard(board);
+        return true;
+    }
+
+    bool success = false;
+    for (int col = 0; col < N; col++) {
+        if (isSafe(board, row, col)) {
+            board[row][col] = 1;  // Place queen
+            success = solveNQueens(board, row + 1) || success;  // Recur
+            board[row][col] = 0;  // Backtrack (remove queen)
+        }
+    }
+    return success;
+}
+
+int main() {
+    vector<vector<int>> board(N, vector<int>(N, 0));  // Initialize board
+    if (!solveNQueens(board, 0))
+        cout << "No solution found!" << endl;
+}
+
+```
+## **Day 23 Task:** 🎯✅
+            - 👉 Modify the code to solve the N-Queens problem for N = 8.
+            - 👉 Try solving the Sudoku solver using backtracking.
 📌 **Remember to push your code daily to** [GitHub](https://github.com)! 🚀
